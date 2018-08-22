@@ -30,7 +30,7 @@ const connector = connectMetaMask({
 });
 
 connector.status;  // current status (CONNECTING, CONNECTED, DISCONNECTED)  
-connector.status$; // status rx subject
+connector.status$; // current status rx subject
 
 const { account, provider } = connector;
 

@@ -59,8 +59,13 @@ export class Connector implements IConnector {
    */
   private constructor(
     options: IConnectorOptions,
-    private win: TWindow = typeof window === "undefined" ? null : window,
+    win: TWindow,
   ) {
+
+    if (!win && typeof window !== "undefined") {
+      win = window;
+    }
+
     this.options = {
       connectionTimeout: 1000,
       accountInterval: 1000,

@@ -16,10 +16,10 @@
     "url": "https://github.com/stanislaw-glogowski/metamask-connector/issues"
   },
   "scripts": {
-    "prebuild": "rimraf ./dist/*",
+    "clean": "rimraf ./dist/*",
+    "prebuild": "npm run clean",
     "build": "tsc",
     "postbuild": "tempack",
-    "prepare": "npm run build",
     "lint": "tslint src/**/*.ts",
     "test": "jest",
     "test:watch": "jest --watch"
@@ -32,7 +32,7 @@
     "@types/jest": "^23.3.1",
     "jest": "^23.5.0",
     "rimraf": "^2.6.2",
-    "tempack": "^1.0.1",
+    "tempack": "^1.0.2",
     "ts-jest": "^23.1.3",
     "tslint": "^5.11.0",
     "typescript": "^3.0.1"

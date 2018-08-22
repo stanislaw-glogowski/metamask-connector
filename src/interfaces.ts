@@ -1,6 +1,7 @@
 import { IEthProvider } from "ethjs";
 import { BehaviorSubject } from "rxjs";
 import { ConnectorState } from "./constants";
+import { TStateSubject } from "./types";
 
 export interface IAccount {
   readonly address$: BehaviorSubject<string>;
@@ -8,7 +9,7 @@ export interface IAccount {
 }
 
 export interface IConnector {
-  readonly state$: BehaviorSubject<ConnectorState>;
+  readonly state$: TStateSubject;
   readonly state: ConnectorState;
   readonly account: IAccount;
   readonly provider: IWrappedProvider;
